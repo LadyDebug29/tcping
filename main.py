@@ -7,7 +7,7 @@ from statistic_helper import StatisticHelper
 
 
 def get_statistics(sh):
-    loss = 100 - (sh.successed // sh.number_packets_sent) * 100
+    loss = int(100 - round(sh.successed / sh.number_packets_sent, 2) * 100)
     print(f"{sh.number_packets_sent} packets transmitted, {sh.successed} received, {loss}% packet loss")
 
 
